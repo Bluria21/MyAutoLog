@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name" translatable="false">MyAutoLog</string>
+    <string name="title_part" translatable="false">Деталь</string>
+    <string name="title_parts" translatable="false">Детали</string>
+    <string name="part_timing_belt">Ремень ГРМ</string>
+    <string name="part_motor_oil">Моторное масло</string>
+    <string name="part_spark_plugs">Свечи зажигания</string>
+    <string name="part_pads">Колодки</string>
+    <string name="part_brake_fluid">Тормозная жидкость</string>
+    <string name="part_tires">Покрышки</string>
+    <string name="label_next_replacement" translatable="false">Следующая замена:</string>
+    <string name="label_select_date" translatable="false">Выбрать дату</string>
+    <string name="label_mileage" translatable="false">Пробег</string>
+    <string name="label_price" translatable="false">Цена</string>
+    <string name="action_add" translatable="false">Добавить</string>
+    <string name="menu_story" translatable="false">История</string>
+    <string name="menu_about" translatable="false">О приложении</string>
+    <string name="menu_settings" translatable="false">Настройки</string>
+    <string name="action_close" translatable="false">Закрыть</string>
+    <string name="label_date" translatable="false">Дата</string>
+    <string name="unknown_part" translatable="false">Ошибка</string>
+    <string name="сhange_car" translatable="false">Сменить авто</string>
+    <string name="support" translatable="false">Поддержка</string>
+    <string name="car" translatable="false">Автомобиль</string>
+    <string name="model" translatable="false">Модель</string>
+    <string name="action_save" translatable="false">Сохранить</string>
+    <string name="profile" translatable="false">Профиль</string>
+    <string name="add_car" translatable="false">Автомобилей пока нет. Добавьте первый!</string>
+    <string name="intervals" translatable="false">Интервалы</string>
+    <string name="color_blindness" translatable="false">Дальтонизм</string>
+    <string name="for_green" translatable="false">Для Зеленого</string>
+    <string name="for_red" translatable="false">Для Красного</string>
+    <string name="for_blue" translatable="false">Для Синего</string>
+    <string name="statistics" translatable="false">Статистика</string>
+    <string name="log_out" translatable="false">Выйти из аккаунта</string>
+    <string name="log_in" translatable="false">Войти в аккаунт</string>
+    <string name="pole_name" translatable="false">Название</string>
+    <string name="make_model" translatable="false">Марка и Модель</string>
+    <string name="car_image" translatable="false">Выбрать изображение автомобиля</string>
+    <string name="year" translatable="false">Год</string>
+    <string name="year_manufacture" translatable="false">Год выпуска</string>
+    <string name="theme">Тема</string>
+    <string name="language">Язык</string>
+    <string name="add_new_detail">Добавить новую деталь</string>
+    <string name="intervals_replacement">Интервал замены (км)</string>
+    <string name="name_detail">Название детали</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="are_you_sure">Вы уверены, что хотите удалить машину?</string>
+    <string name="confirmation">Подтверждение</string>
+
+
+
+
+
+    <string name="web_client_id" translatable="false">170254695775-8tqcns7t5cmhsgeeomfriuje20tgtq34.apps.googleusercontent.com</string>
+</resources>

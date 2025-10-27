@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">MyAutoLog</string>
+    <string name="title_parts">Details</string>
+    <string name="title_part">Part</string>
+    <string name="part_timing_belt">Timing belt</string>
+    <string name="part_motor_oil">Motor oil</string>
+    <string name="part_spark_plugs">Spark plugs</string>
+    <string name="part_pads">Pads</string>
+    <string name="part_brake_fluid">Brake fluid</string>
+    <string name="part_tires">Tires</string>
+    <string name="label_next_replacement">Next replacement:</string>
+    <string name="label_select_date">Select date</string>
+    <string name="label_mileage">Mileage</string>
+    <string name="label_price">Price</string>
+    <string name="action_add">Add</string>
+    <string name="menu_story">Story</string>
+    <string name="menu_about">About the application</string>
+    <string name="menu_settings">Settings</string>
+    <string name="action_close">Close</string>
+    <string name="label_date">Date</string>
+    <string name="unknown_part">Error</string>
+    <string name="сhange_car">Change Car</string>
+    <string name="support">Support</string>
+    <string name="car">Сar</string>
+    <string name="model">Model</string>
+    <string name="action_save">Save</string>
+    <string name="profile">Profile</string>
+    <string name="add_car">There are no cars yet. Be the first to add them!</string>
+    <string name="intervals">Intervals</string>
+    <string name="web_client_id">170254695775-8tqcns7t5cmhsgeeomfriuje20tgtq34.apps.googleusercontent.com</string>
+    <string name="color_blindness">Сolor Blindness</string>
+    <string name="for_blue">For Blue</string>
+    <string name="for_red">For Red</string>
+    <string name="for_green">For Green</string>
+    <string name="statistics">Statistics</string>
+    <string name="log_out">Log out</string>
+    <string name="log_in">Log in</string>
+    <string name="pole_name">Name</string>
+    <string name="make_model">Make and Model</string>
+    <string name="car_image">Select car image</string>
+    <string name="year">Year</string>
+    <string name="year_manufacture">Year of manufacture </string>
+    <string name="theme">Theme</string>
+    <string name="language">Language</string>
+    <string name="add_new_detail">Add new detail</string>
+    <string name="intervals_replacement">Replacement interval (km)</string>
+    <string name="name_detail">Name detail</string>
+    <string name="confirmation">Сonfirmation</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="are_you_sure">Are you sure you want to delete the car?</string>
+
+
+
+
+</resources>

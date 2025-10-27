@@ -1,0 +1,14 @@
+# Сборочные файлы модуля
+/build/
+.externalNativeBuild/
+.cxx/
+release/
+
+# Временные файлы и артефакты
+*.log
+*.tmp
+lint-baseline.xml
+gmpAppId.txt
+
+# IDE-файлы
+*.iml

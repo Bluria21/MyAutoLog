@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Темная тема -->
+    <style name="Theme.MyCar" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:windowBackground">@color/color_static_black</item>
+
+        <!-- Можешь подставить свои тёмные цвета -->
+        <item name="colorPrimary">@color/color_static_dark_grey</item>
+        <item name="colorOnPrimary">@color/color_static_white</item>
+        <item name="colorSecondary">@color/color_static_light_grey</item>
+        <item name="colorOnSecondary">@color/color_static_white</item>
+
+        <item name="android:textColor">@color/color_static_light_grey</item>
+    </style>
+
+</resources>

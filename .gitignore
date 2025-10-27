@@ -1,0 +1,111 @@
+# ====================
+# Android / Gradle
+# ====================
+build/
+.gradle/
+.idea/
+captures/
+.externalNativeBuild/
+local.properties
+
+# IntelliJ / Android Studio
+*.iml
+*.ipr
+*.iws
+
+# Keystore files
+*.jks
+*.keystore
+*.key
+
+# Firebase / Google services
+google-services.json
+google-services-client.json
+
+# Apk / AAB files
+*.apk
+*.aab
+app/release/
+release/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+hs_err_pid*.log
+build_log.txt
+
+# Kotlin / Java temporary files
+out/
+bin/
+
+# Environment variables
+.env
+
+# Android Profiling and crash reports
+*.hprof
+
+# Room schema exports
+app/schemas/
+
+# Temporary Gradle caches
+gradle-app.setting
+
+# Local test files or debug config
+app/debug/
+
+# ====================
+# Optional: other common exclusions
+# ====================
+# Jetpack Compose previews cache
+**/.compose-cache/
+# Generated protobuf files
+app/build/generated/
+
+# ====================
+# Ignore module-specific things
+# ====================
+app/gmpAppId.txt
+app/lint-baseline.xml
+# Android / Gradle build files
+/build/
+**/build/
+
+
+# Keystore (подпись APK)
+
+
+# Firebase / Google services
+app/google-services.json
+
+
+# Logs / Reports
+
+*.xml.zip
+
+
+# IntelliJ / Android Studio
+
+.idea/caches
+.idea/libraries
+.idea/shelf
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+
+# OS files
+
+
+# Kotlin
+*.kotlin_module
+
+# Gradle wrapper files
+!gradle/wrapper/gradle-wrapper.jar
+
+# Temporary or backup files
+*.bak
+*.swp
+*.orig
