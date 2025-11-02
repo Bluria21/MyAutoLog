@@ -61,11 +61,10 @@ fun ScrollCarView(
                     .background(backgroundColor)
                     .border(width = 2.dp, color = borderColor, shape = RoundedCornerShape(8.dp))
                     .clickable { onCarClick(car) }
-                    .padding(8.dp), // отступ внутри рамки
+                    .padding(8.dp),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                // Иконка автомобиля
                 car.imageUri?.let { uri ->
                     Image(
                         painter = rememberAsyncImagePainter(uri),
@@ -82,8 +81,6 @@ fun ScrollCarView(
                         .clip(CircleShape),
                     tint = colors.onSurface
                 )
-
-                // Информация об авто
                 Column(
                     modifier = Modifier
                         .padding(start = 12.dp)

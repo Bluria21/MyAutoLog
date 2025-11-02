@@ -48,7 +48,7 @@ fun TheApplicationView(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(colors.background) // Фон всего экрана черный
+            .background(colors.background)
     )  {
         Row(
             modifier = Modifier
@@ -59,7 +59,7 @@ fun TheApplicationView(
             Icon(
                 imageVector = Icons.Default.ChevronLeft,
                 contentDescription = "Меню",
-                tint = colors.onSurface,  // <-- всегда контрастный к surface
+                tint = colors.onSurface,
                 modifier = Modifier
                     .size(50.dp)
                     .padding(start = 10.dp)
@@ -75,7 +75,7 @@ fun TheApplicationView(
                 modifier = Modifier
                     .weight(1f)
                     .padding(end = 50.dp),
-                color = colors.onSurface,   // <-- всегда контрастный к surface
+                color = colors.onSurface,
                 style = TextStyle(
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Bold,

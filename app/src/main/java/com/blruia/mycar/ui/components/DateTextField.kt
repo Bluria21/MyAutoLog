@@ -26,7 +26,6 @@ fun DateTextField(dateState: MutableState<String>) {
     val calendar = Calendar.getInstance()
     val colors = MaterialTheme.colorScheme
 
-    // Открываем DatePickerDialog
     val openDatePicker = {
         DatePickerDialog(
             context,

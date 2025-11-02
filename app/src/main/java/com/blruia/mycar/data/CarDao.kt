@@ -9,8 +9,6 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface CarDao {
-
-    //Данные полученные "Название детали, пробег и дата"
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCar(car: CarInfo):Long
 

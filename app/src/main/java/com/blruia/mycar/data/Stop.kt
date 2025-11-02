@@ -47,18 +47,16 @@ class Stop : ComponentActivity() {
         setContent { SplashScreen() }
 
         lifecycleScope.launch {
-            // читаем язык асинхронно
+
             val language = dataStoreManager.getLanguage().first()
-            updateLocale(language) // выставляем локаль
-            delay(800) // для красоты анимации Splash
+            updateLocale(language)
+            delay(800)
 
             val currentUser = auth.currentUser
             if(currentUser != null) {
                 if (justSignedIn) {
-                    // вызываем миграцию локальных данных в облако
                     carInfoViewModel.migrateLocalToCloudAndSync()
                 } else {
-                    // обычная синхронизация с облаком при запуске
                     carInfoViewModel.syncFromCloud()
                 }
             }
@@ -79,9 +77,9 @@ class Stop : ComponentActivity() {
     private fun checkAuthAndNavigate() {
         val currentUser = auth.currentUser
         val nextActivity = if (currentUser != null) {
-            MainActivity::class.java   // уже вошёл
+            MainActivity::class.java
         } else {
-            LoginActivity::class.java  // ещё не вошёл
+            LoginActivity::class.java
         }
         startActivity(Intent(this, nextActivity))
         finish()

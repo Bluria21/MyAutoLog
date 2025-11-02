@@ -54,8 +54,8 @@ fun SupportView(modifier: Modifier,navController: NavController,themeManager: Th
         Row(
             modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 16.dp), // Добавим вертикальные отступы
-            verticalAlignment = Alignment.CenterVertically // Выравниваем элементы по вертикали
+            .padding(vertical = 16.dp),
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(
                 Icons.Default.ChevronLeft,
@@ -74,13 +74,13 @@ fun SupportView(modifier: Modifier,navController: NavController,themeManager: Th
             Text(
                 text = stringResource(R.string.support),
                 modifier = Modifier
-                    .weight(1f) // Занимает все доступное пространство
-                    .padding(end = 50.dp), // Компенсируем ширину иконки
+                    .weight(1f)
+                    .padding(end = 50.dp),
                 color = colors.onSurface,
                 style = TextStyle(
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Bold,
-                    textAlign = TextAlign.Center // Центрируем текст внутри его области
+                    textAlign = TextAlign.Center
                 )
             )
         }

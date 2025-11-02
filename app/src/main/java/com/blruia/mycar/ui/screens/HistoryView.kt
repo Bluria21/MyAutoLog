@@ -80,7 +80,7 @@ fun HistoryView(
             )
         }
 
-        // Заголовки таблицы
+
         Row(modifier = Modifier.padding(horizontal = 20.dp)) {
             Text(text = stringResource(R.string.label_date), modifier = Modifier.weight(2f), style = TextStyle(fontSize = 16.sp, fontWeight = FontWeight.Bold, color = colors.onSurface), textAlign = TextAlign.Center)
             Text(text = stringResource(R.string.label_mileage), modifier = Modifier.weight(1.2f), style = TextStyle(fontSize = 16.sp, fontWeight = FontWeight.Bold, color = colors.onSurface), textAlign = TextAlign.Center)
@@ -88,16 +88,16 @@ fun HistoryView(
             Text(text = stringResource(R.string.title_part), modifier = Modifier.weight(1.6f), style = TextStyle(fontSize = 16.sp, fontWeight = FontWeight.Bold, color = colors.onSurface), textAlign = TextAlign.Center)
         }
 
-        // Список записей
+
         LazyColumn(modifier = Modifier.weight(1f).padding(horizontal = 5.dp)) {
             items(sortedEntries) { item ->
-                // Для каждой записи решаем: ресурсный ключ -> локализованный текст, иначе просто partKey
+
                 val partTitle = if(item.isResourceKey) {
                     getLocalizedPartName(item.partKey)?.let { resId ->
                         stringResource(resId)
                     } ?: item.partKey
                 } else {
-                    item.partKey // просто название кастомной детали
+                    item.partKey
                 }
 
                 Row(

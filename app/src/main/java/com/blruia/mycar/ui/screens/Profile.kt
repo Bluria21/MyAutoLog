@@ -83,12 +83,11 @@ fun Profile(
             containerColor = if (isDarkTheme) Color.Black else Color.White
         )
     ) {
-        //Spacer(modifier.padding(top = 10.dp))
         Column(modifier = Modifier.fillMaxSize()) {
             Row(modifier = Modifier
                 .fillMaxWidth()
-                .padding(vertical = 16.dp), // Добавим вертикальные отступы
-                verticalAlignment = Alignment.CenterVertically // Выравниваем элементы по вертикали
+                .padding(vertical = 16.dp),
+                verticalAlignment = Alignment.CenterVertically
             ){
                 Icon(
                     imageVector = Icons.Default.ChevronLeft,
@@ -107,13 +106,13 @@ fun Profile(
                 Text(
                     text = stringResource(R.string.profile),
                     modifier = Modifier
-                        .weight(1f) // Занимает все доступное пространство
-                        .padding(end = 50.dp), // Компенсируем ширину иконки
+                        .weight(1f)
+                        .padding(end = 50.dp),
                     color = colors.onSurface,
                     style = TextStyle(
                         fontSize = 20.sp,
                         fontWeight = FontWeight.Bold,
-                        textAlign = TextAlign.Center // Центрируем текст внутри его области
+                        textAlign = TextAlign.Center
                     )
                 )
             }

@@ -61,7 +61,7 @@ fun Avtor(
     navController: NavController,
     themeManager: ThemeManager,
     viewModel: EntryViewModel,
-    customCardViewModel: CustomCardViewModel, // ✅ добавляем сюда
+    customCardViewModel: CustomCardViewModel,
     carId: Int
 ) {
     val isDarkTheme by themeManager.isDarkMode.collectAsState(initial = false)
@@ -71,11 +71,11 @@ fun Avtor(
     val scope = rememberCoroutineScope()
     val drawerState = rememberDrawerState(DrawerValue.Closed)
 
-    // ✅ Достаём Activity и Context
+
     val context = LocalContext.current
     val activity = context as Activity
 
-    // ✅ Создаём GoogleSignInClient здесь же
+
     val googleSignInClient = remember {
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(context.getString(R.string.web_client_id))
@@ -86,7 +86,7 @@ fun Avtor(
     val auth = remember { FirebaseAuth.getInstance() }
     val currentUser = auth.currentUser
     val isLoggedIn = currentUser != null
-    // Отдельные состояния
+
     var isColorBlindnessExpanded by remember { mutableStateOf(false) }
     var isIntervalsExpanded by remember { mutableStateOf(false) }
     var showCustomCardDialog by remember { mutableStateOf(false) }
@@ -98,7 +98,7 @@ fun Avtor(
             .verticalScroll(rememberScrollState())
             .padding(16.dp)
     ) {
-        // Верхняя панель
+
         Row(
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -113,13 +113,13 @@ fun Avtor(
             Text(
                 text = stringResource( R.string.menu_settings),
                 modifier = Modifier
-                    .weight(1f) // Занимает все доступное пространство
-                    .padding(end = 50.dp), // Компенсируем ширину иконки
+                    .weight(1f)
+                    .padding(end = 50.dp),
                 color = colors.onSurface,
                 style = TextStyle(
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Bold,
-                    textAlign = TextAlign.Center // Центрируем текст внутри его области
+                    textAlign = TextAlign.Center
                 )
             )
         }
@@ -146,7 +146,7 @@ fun Avtor(
 
         Spacer(modifier = Modifier.height(15.dp))
 
-        // Язык
+
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
@@ -184,12 +184,12 @@ fun Avtor(
             Text(stringResource(R.string.add_new_detail))
         }
 
-        // Диалоговое окно
+
         if (showCustomCardDialog) {
             SettingCustomCard(
                 carId = carId,
                 customCardViewModel = customCardViewModel,
-                onDismiss = { showCustomCardDialog = false } // ✅ управление состоянием
+                onDismiss = { showCustomCardDialog = false }
             )
         }
 
@@ -198,11 +198,10 @@ fun Avtor(
             color = colors.onSurface
         )
 
-        // 🔴 Кнопка выхода
+
         Button(
             onClick = {
                 if (isLoggedIn) {
-                    // Выход
                     auth.signOut()
                     googleSignInClient.signOut().addOnCompleteListener {
                         val intent = Intent(activity, LoginActivity::class.java)
@@ -211,7 +210,6 @@ fun Avtor(
                         activity.finish()
                     }
                 } else {
-                    // Вход
                     val intent = Intent(activity, LoginActivity::class.java)
                     activity.startActivity(intent)
                 }
@@ -225,9 +223,9 @@ fun Avtor(
         ) {
             Text(
                 text = if (isLoggedIn)
-                    stringResource(R.string.log_out) // "Выйти из аккаунта"
+                    stringResource(R.string.log_out)
                 else
-                    stringResource(R.string.log_in), // "Войти в аккаунт"
+                    stringResource(R.string.log_in),
                 color = colors.onSurface,
                 fontWeight = FontWeight.Bold
             )

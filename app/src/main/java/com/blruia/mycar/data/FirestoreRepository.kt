@@ -15,9 +15,6 @@ import javax.inject.Inject
         private fun getUserIdOrNull(): String? {
             return auth.currentUser?.uid
         }
-    
-        // ---------- Машины ----------
-    
         suspend fun uploadCar(car: CarInfo) {
             val uid = getUserIdOrNull()
             if (uid == null) {
@@ -41,10 +38,8 @@ import javax.inject.Inject
                 carRef.set(carMap).await()
             } catch (e: Exception) {
                 Log.e("FirestoreRepository", "uploadCar failed: ${e.message}", e)
-                // можно перекинуть ошибку дальше или просто логировать
             }
         }
-    
         suspend fun deleteCar(carId: Int) {
             val uid = getUserIdOrNull() ?: run {
                 Log.w("FirestoreRepository", "deleteCar: user not signed in — skipping")
@@ -61,7 +56,6 @@ import javax.inject.Inject
                 Log.e("FirestoreRepository", "deleteCar failed: ${e.message}", e)
             }
         }
-    
         suspend fun downloadCarsAsync(): List<CarInfo> {
             val uid = getUserIdOrNull() ?: run {
                 Log.w("FirestoreRepository", "downloadCarsAsync: user not signed in — returning empty list")
@@ -92,9 +86,6 @@ import javax.inject.Inject
                 emptyList()
             }
         }
-    
-        // ---------- Записи ----------
-    
         suspend fun uploadEntry(entry: Entry) {
             val uid = getUserIdOrNull()
             if (uid == null) {
@@ -122,7 +113,7 @@ import javax.inject.Inject
                 Log.e("FirestoreRepository", "uploadEntry failed: ${e.message}", e)
             }
         }
-    
+
         suspend fun deleteEntry(carId: Int, entryId: Int) {
             val uid = getUserIdOrNull() ?: run {
                 Log.w("FirestoreRepository", "deleteEntry: user not signed in — skipping")

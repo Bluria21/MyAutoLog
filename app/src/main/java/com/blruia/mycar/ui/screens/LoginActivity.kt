@@ -51,7 +51,7 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.web_client_id)) // <-- убедись, что web_client_id из google-services.json
+            .requestIdToken(getString(R.string.web_client_id))
             .requestEmail()
             .build()
 
@@ -61,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
             LoginScreen(
                 googleSignInClient = googleSignInClient,
                 auth = auth,
-                activity = this // <-- передаём Activity сюда
+                activity = this
             )
         }
     }
@@ -71,7 +71,7 @@ class LoginActivity : AppCompatActivity() {
 fun LoginScreen(
     googleSignInClient: GoogleSignInClient,
     auth: FirebaseAuth,
-    activity: Activity // <-- теперь гарантированно есть
+    activity: Activity
 ) {
     val colors = MaterialTheme.colorScheme
     val drawerState = rememberDrawerState(DrawerValue.Closed)
@@ -118,7 +118,7 @@ fun LoginScreen(
                 style = TextStyle(
                     fontSize = 50.sp,
                     fontWeight = FontWeight.Bold,
-                    textAlign = TextAlign.Center // Центрируем текст внутри его области
+                    textAlign = TextAlign.Center
                 )
             )
         Spacer(modifier = Modifier.height(500.dp))
@@ -127,7 +127,7 @@ fun LoginScreen(
                     containerColor = Color.DarkGray
                 ),
                 onClick = {
-                    val intent = Intent(activity, MainActivity::class.java) // ← это твой главный экран
+                    val intent = Intent(activity, MainActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     activity.startActivity(intent)
                     activity.finish()
@@ -144,7 +144,7 @@ fun LoginScreen(
                     style = TextStyle(
                         fontSize = 15.sp,
                         fontWeight = FontWeight.Bold,
-                        textAlign = TextAlign.Center // Центрируем текст внутри его области
+                        textAlign = TextAlign.Center
                     )
                         )
             }
@@ -165,7 +165,7 @@ fun LoginScreen(
                     style = TextStyle(
                         fontSize = 15.sp,
                         fontWeight = FontWeight.Bold,
-                        textAlign = TextAlign.Center // Центрируем текст внутри его области
+                        textAlign = TextAlign.Center
                     )
                         )
             }

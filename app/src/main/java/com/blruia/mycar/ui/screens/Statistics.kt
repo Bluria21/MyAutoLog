@@ -46,14 +46,13 @@ fun Statistics(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(colors.background) // Фон всего экрана черный
+            .background(colors.background)
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(vertical = 16.dp)
-                ,// Добавим вертикальные отступы
-            verticalAlignment = Alignment.CenterVertically // Выравниваем элементы по вертикали
+                .padding(vertical = 16.dp),
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(
                 Icons.Default.ChevronLeft,
@@ -72,13 +71,13 @@ fun Statistics(
             Text(
                 text = stringResource(R.string.statistics),
                 modifier = Modifier
-                    .weight(1f) // Занимает все доступное пространство
-                    .padding(end = 50.dp), // Компенсируем ширину иконки
+                    .weight(1f)
+                    .padding(end = 50.dp),
                 style = TextStyle(
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center,
-                            color = colors.onSurface,// Центрируем текст внутри его области
+                            color = colors.onSurface,
                 )
             )
         }

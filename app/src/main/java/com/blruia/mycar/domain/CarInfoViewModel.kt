@@ -37,15 +37,12 @@ class CarInfoViewModel @Inject constructor(
         SharingStarted.WhileSubscribed(5000),
         emptyList()
     )
-
-    // Устанавливаем активный автомобиль
     fun setActiveCar(carId: Int) {
         viewModelScope.launch {
             dataStoreManager.saveActiveCarId(carId)
         }
     }
     fun migrateLocalToCloudAndSync() {
-        // создаём независимую корутину, не зависящую от жизненного цикла ViewModel
         CoroutineScope(Dispatchers.IO + SupervisorJob()).launch {
             try {
                 val localCars = carDao.getAllCars().first()
@@ -70,15 +67,11 @@ class CarInfoViewModel @Inject constructor(
             }
         }
     }
-
-    // Получаем активный автомобиль
     fun getActiveCar(): Flow<CarInfo?> {
         return cars.combine(dataStoreManager.getActiveCarId()) { carsList, activeId ->
             activeId?.let { id -> carsList.find { it.id == id } }
         }
     }
-
-    // При добавлении автомобиля автоматически делаем его активным
     fun addCar(car: CarInfo) {
         viewModelScope.launch(Dispatchers.IO) {
             val newId = carDao.insertCar(car).toInt()
@@ -87,8 +80,6 @@ class CarInfoViewModel @Inject constructor(
             firestoreRepo.uploadCar(carWithId)
         }
     }
-
-    // При удалении автомобиля сбрасываем активный, если удаляем текущий
     fun deleteCar(car: CarInfo) {
         viewModelScope.launch(Dispatchers.IO) {
             carDao.deleteCar(car)

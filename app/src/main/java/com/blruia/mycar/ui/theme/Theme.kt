@@ -9,15 +9,14 @@ import androidx.compose.ui.graphics.Color
 private val DarkColorScheme = darkColorScheme(
     background = Color.Black,
     surface = Color(0xFF1E1E1E),
-    onBackground = Color.DarkGray,   // <-- Должен быть белым в тёмной теме
-    onSurface = Color.White       // <-- Белый текст на surface colorOnSecondary
+    onBackground = Color.DarkGray,
+    onSurface = Color.White
 )
 
 private val LightColorScheme = lightColorScheme(
     background = Color.White,
     surface = Color(0xFFF5F5F5),
-    onBackground = Color.LightGray,   // <-- Должен быть чёрным в светлой теме
-    onSurface = Color.Black       // <-- Чёрный текст на surface
+    onBackground = Color.LightGray,
 )
 @Composable
 fun MyCarTheme(

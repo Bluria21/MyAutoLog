@@ -33,7 +33,7 @@ class EntryViewModel @Inject constructor(
 
 
     val entries: StateFlow<List<Entry>> = _activeCarId
-        .filter { it != null && it != -1 }  // ✅ здесь уже оба условия
+        .filter { it != null && it != -1 }
         .flatMapLatest { carId -> entryDao.getEntriesForCar(carId!!) }
         .stateIn(
             viewModelScope,
@@ -65,7 +65,7 @@ class EntryViewModel @Inject constructor(
     fun saveInterval(partName: String, value: Int) {
         viewModelScope.launch {
             dataStoreManager.saveInterval(partName, value)
-            loadIntervals() // Обновляем данные после сохранения
+            loadIntervals()
         }
     }
 

@@ -41,12 +41,11 @@ fun ChangeCarDialog(
     onDismiss: () -> Unit,
     onSave: (CarInfo) -> Unit
 ) {
-    // Состояния для данных автомобиля
     val carName = remember { mutableStateOf("") }
     val carBrand = remember { mutableStateOf("") }
     val carYear = remember { mutableStateOf("") }
     val carMileage = remember { mutableStateOf("") }
-    val carImageUri = remember { mutableStateOf<Uri?>(null) } // URI изображения
+    val carImageUri = remember { mutableStateOf<Uri?>(null) }
 
 
     val launcher = rememberLauncherForActivityResult(
@@ -76,14 +75,11 @@ fun ChangeCarDialog(
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 16.dp)
             )
-
-            // Основной контент
             Column(
                 modifier = Modifier
                     .weight(1f)
                     .verticalScroll(rememberScrollState())
             ) {
-                // Кнопка для выбора изображения
                 Button(
                     onClick = { launcher.launch("image/*") },
                     modifier = Modifier
@@ -92,8 +88,6 @@ fun ChangeCarDialog(
                 ) {
                     Text(stringResource(R.string.car_image))
                 }
-
-                // Превью выбранного изображения
                 carImageUri.value?.let { uri ->
                     Image(
                         painter = rememberAsyncImagePainter(uri),
@@ -105,8 +99,6 @@ fun ChangeCarDialog(
                             .padding(bottom = 16.dp)
                     )
                 }
-
-                // Поле "Название"
                 OutlinedTextField(
                     value = carName.value,
                     onValueChange = { carName.value = it },
@@ -115,8 +107,6 @@ fun ChangeCarDialog(
                         .fillMaxWidth()
                         .padding(bottom = 8.dp)
                 )
-
-                // Поле "Марка"
                 OutlinedTextField(
                     value = carBrand.value,
                     onValueChange = { carBrand.value = it },
@@ -125,8 +115,6 @@ fun ChangeCarDialog(
                         .fillMaxWidth()
                         .padding(bottom = 8.dp)
                 )
-
-                // Поле "Пробег"
                 OutlinedTextField(
                     value = carMileage.value,
                     onValueChange = {
@@ -140,8 +128,6 @@ fun ChangeCarDialog(
                         .fillMaxWidth()
                         .padding(bottom = 8.dp)
                 )
-
-                // Поле "Год выпуска"
                 DateCarouselChangeCarView(
                     selectedYear = carYear.value,
                     onYearSelected = { carYear.value = it },
@@ -150,8 +136,6 @@ fun ChangeCarDialog(
                         .padding(bottom = 16.dp)
                 )
             }
-
-            // Кнопки
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.End

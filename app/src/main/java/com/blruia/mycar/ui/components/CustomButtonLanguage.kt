@@ -67,10 +67,7 @@ fun CustomButtonLanguage(
                     settingsViewModel.saveLanguage(newLang)
                     setAppLocale(context, newLang)
                 isEnglish = !isEnglish
-                    (context as? Activity)?.recreate()// обновляем язык
-
-                    // безопасный перезапуск активити
-
+                    (context as? Activity)?.recreate()
                 }
             }
             .padding(horizontal = 4.dp, vertical = 4.dp)

@@ -20,7 +20,7 @@ import androidx.room.PrimaryKey
 data class Entry(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val carId: Int,
-    val partKey: String,   // ключ ресурса, например "part_timing_belt"
+    val partKey: String,
     val date: String,
     val mileageHistory: String,
     val price: String,

@@ -53,9 +53,9 @@ fun CardView(
     viewModel: EntryViewModel,
     themeManager: ThemeManager,
     carId: Int,
-    isResourceKey: Boolean = true,   // true — считать title ключом для getLocalizedPartName
+    isResourceKey: Boolean = true,
     customInterval: Int? = null ,
-    onDelete: ((String) -> Unit)? = null// если кастом — интервал сюда
+    onDelete: ((String) -> Unit)? = null
 ) {
     var isExpanded by remember { mutableStateOf(false) }
     val entries by viewModel.entries.collectAsState(initial = emptyList())
@@ -67,7 +67,7 @@ fun CardView(
     val replacementIntervals by viewModel.replacementIntervals.collectAsState()
     var showDeleteDialog by remember { mutableStateOf(false) }
 
-    // Если кастомный интервал передан — используем его, иначе ищем по ключу, иначе дефолт
+
     val mileageToAdd = customInterval ?: (replacementIntervals[title] ?: 50_000)
 
     val lastMileage = entries
@@ -189,7 +189,6 @@ fun CardView(
             }
         }
     }
-    // Диалог подтверждения удаления
     if (showDeleteDialog) {
         AlertDialog(
             onDismissRequest = { showDeleteDialog = false },

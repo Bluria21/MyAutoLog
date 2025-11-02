@@ -187,7 +187,6 @@ fun MenuView(navController: NavController,
             }
         }
     ) {
-        // Контент экрана теперь внутри ModalNavigationDrawer
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -205,7 +204,7 @@ fun MenuView(navController: NavController,
                 },
                 modifier = Modifier
                     .align(Alignment.TopStart)
-                    .padding(top = 15.dp)// Слева сверху
+                    .padding(top = 15.dp)
                     .zIndex(1f)
 
             ) {

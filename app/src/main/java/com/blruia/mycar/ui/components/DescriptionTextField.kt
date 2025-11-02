@@ -27,9 +27,9 @@ fun Description(descriptionState: MutableState<String>){
         colors = TextFieldDefaults.colors(
             unfocusedContainerColor = colors.background,
             focusedContainerColor = colors.background,
-            unfocusedIndicatorColor = Color.Transparent, // 🔥 убирает серую линию
-            focusedIndicatorColor = Color.Transparent,   // 🔥 убирает синюю линию
-            disabledIndicatorColor = Color.Transparent,  // 🔥 убирает линию в disabled
+            unfocusedIndicatorColor = Color.Transparent,
+            focusedIndicatorColor = Color.Transparent,
+            disabledIndicatorColor = Color.Transparent,
             errorIndicatorColor = Color.Transparent
         ),
         shape = RoundedCornerShape(12.dp),

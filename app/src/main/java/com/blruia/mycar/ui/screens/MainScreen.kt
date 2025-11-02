@@ -67,7 +67,7 @@ fun AppNavigation(
                 themeManager = themeManager,
                 viewModel = carInfoViewModel,
                 carId = carId,
-                dataStoreManager = dataStoreManager // ✅ добавлено
+                dataStoreManager = dataStoreManager
             )
 
         }
@@ -146,19 +146,18 @@ fun IconView(
                 viewModel = viewModel,
                 themeManager = themeManager,
                 carId = carId,
-                isResourceKey = true,   // можно опустить — по умолчанию true
+                isResourceKey = true,
                 customInterval = null
             )
         }
 
         items(customParts) { part ->
-            // Это внутри @Composable, так что все ок
             CardView(
                 title = part.name,
                 viewModel = viewModel,
                 themeManager = themeManager,
                 carId = carId ,
-                isResourceKey = false,         // важно: не пытаться локализовать
+                isResourceKey = false,
                 customInterval = part.intervals,
                 onDelete = { nameToDelete ->
                     customCardViewModel.deletePart(part)}

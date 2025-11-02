@@ -20,7 +20,7 @@ import java.util.Locale
     resources.updateConfiguration(config, resources.displayMetrics)
 }
 
-// ВНЕ функции setAppLocale
+
 fun updateContextLocale(context: Context, languageCode: String): Context {
     val locale = Locale(languageCode)
     Locale.setDefault(locale)
